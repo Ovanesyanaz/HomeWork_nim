@@ -51,7 +51,7 @@ def usual_step(state_curr: list[int]) -> NimStateChange:
 
 def smart_step(state_curr: list[int]) -> NimStateChange:
     for i in range(len(state_curr)):
-        
-        if (nim_sum(state_curr) ^ state_curr[i]) < state_curr[i]:
-            return NimStateChange(i, state_curr[i] - (nim_sum(state_curr) ^ state_curr[i]))
+        buf = nim_sum(state_curr) ^ state_curr[i]
+        if (buf) < state_curr[i]:
+            return NimStateChange(i, state_curr[i] - (buf))
     return simple_step(state_curr)

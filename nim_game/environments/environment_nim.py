@@ -18,7 +18,8 @@ class EnvironmentNim:
         if heaps_amount <= STONE_AMOUNT_MIN or heaps_amount > STONE_AMOUNT_MAX:
             raise ValueError
 
-        self._heaps = [randint(STONE_AMOUNT_MIN, STONE_AMOUNT_MAX) for i in range(heaps_amount)]
+        self._heaps = [randint(STONE_AMOUNT_MIN, STONE_AMOUNT_MAX)
+                       for i in range(heaps_amount)]
 
     def get_state(self) -> list[int]:
         """
