@@ -28,7 +28,7 @@ class GameNim:
 
         if self.is_game_finished():
             Game_state.winner = Players.USER
-
+            return Game_state
         agent_step = self._agent.make_step(self.heaps_state)
         self._environment.change_state(agent_step)
         Game_state.heaps_state = self.heaps_state
